@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>Hello</servlet-name>
+        <servlet-class>it.univaq.f4i.iw.examples.Cercami</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Hello</servlet-name>
+        <url-pattern>/cercami</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>cercami</welcome-file>
+    </welcome-file-list>
+    
+    <!-- UTILIZZATI PER IL JDBC DIRETTO -->
+    <!-- USED FOR DIRECT JDBC -->    
+    <context-param>
+        <param-name>data.jdbc.driver</param-name>
+        <!-- attenzione: questo esempio usa il connector/J 8: il nome del driver è diverso per evitare conflitti col driver della versione precedente -->
+        <!-- warning: this example uses the connector/J version 8: the driver name is different from version 5 to avoid conflicts -->
+        <param-value>com.mysql.cj.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>data.jdbc.connectionstring</param-name>
+        <!-- specificare la timezone del server, nella connection string o nella configurazione dello stesso, è essenziale col connector/J 8 -->
+        <!-- specifying the server timezone, in the connection string o the server configuration is required with connector/J 8 -->
+        <param-value>jdbc:mysql://localhost/webdb2?serverTimezone=UTC</param-value>
+    </context-param>
+    <context-param>
+        <param-name>data.jdbc.username</param-name>
+        <param-value>website</param-value>
+    </context-param>
+    <context-param>
+        <param-name>data.jdbc.password</param-name>
+        <param-value>webpass</param-value>
+    </context-param>
+    
+    <!-- UTILIZZATO PER IL CONNECTION POOLING -->
+    <!-- USED FOR CONNECTION POOLING -->
+    <context-param>
+        <param-name>data.source</param-name>
+        <param-value>java:comp/env/jdbc/webdb2</param-value>
+    </context-param>
+    <resource-ref>
+        <res-ref-name>jdbc/webdb2</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>     
+</web-app>
