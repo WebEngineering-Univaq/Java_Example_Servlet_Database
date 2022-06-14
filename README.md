@@ -1,4 +1,4 @@
-# Esempio_Servlet_Database_Maven
+#  Java_Example_Servlet_Database
 > Basic  database access procedures in Java servlets
  
 This example shows how to create a JDBC connection pool in Tomcat and use it in a web application through the DataSource objects.
@@ -17,6 +17,6 @@ Finally, this example uses a MySQL database. Therefore, you need a working insta
  
 ---
 
-![University od L'Aquila](https://www.disim.univaq.it/skins/aqua/img/logo2021-2.png)
+![University of L'Aquila](https://www.disim.univaq.it/skins/aqua/img/logo2021-2.png)
 
  
