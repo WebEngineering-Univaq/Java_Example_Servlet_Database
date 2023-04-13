@@ -112,7 +112,6 @@ public class Cercami extends HttpServlet {
         //caricamento dinamico della classe driver. 
         //usiamo dei parametri del contesto per configurarlo (vedi web.xml)            
         //dynamic loading of the driver class
-        //here we get the connection string, driver name, username and password 
         //from the context initialization parameters (see web.xml)
         Class.forName(getServletContext().getInitParameter("data.jdbc.driver"));
 
