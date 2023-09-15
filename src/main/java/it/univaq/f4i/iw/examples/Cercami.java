@@ -259,7 +259,7 @@ public class Cercami extends HttpServlet {
         HTMLResult result = new HTMLResult(getServletContext());
         result.setTitle("Cercami!");
         result.appendToBody("<form method=\"get\" action=\"cercami\">");
-        result.appendToBody("<p>Search for you name in the author database: ");
+        result.appendToBody("<p>Search for your name in the author database: ");
         result.appendToBody("<input type=\"text\" name=\"n\"/>");
         result.appendToBody("<input type=\"hidden\" name=\"action\" value=\"search\"/>");
         result.appendToBody("</p>");
