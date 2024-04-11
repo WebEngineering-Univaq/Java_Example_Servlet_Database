@@ -198,8 +198,6 @@ public class Cercami extends HttpServlet {
                 //connessione al database locale
                 //database connection
                 Connection connection = ds.getConnection();
-                //POSSIAMO USARE SIA L'SQL PRECOMPILATO CHE QUELLO DIRETTO
-                //WE CAN USE BOTH PRECOMPILED OR DIRECT SQL HERE
                 //compiliamo la query parametrica
                 //compile the parametric query
                 PreparedStatement ps = connection.prepareStatement(SQL_SELECT_AUTHOR)) {
@@ -237,8 +235,6 @@ public class Cercami extends HttpServlet {
                 //connessione al database locale
                 //database connection
                 Connection connection = dsg.getConnection();
-                //POSSIAMO USARE SIA L'SQL PRECOMPILATO CHE QUELLO DIRETTO
-                //WE CAN USE BOTH PRECOMPILED OR DIRECT SQL HERE
                 //compiliamo la query parametrica
                 //compile the parametric query
                 PreparedStatement ps = connection.prepareStatement(SQL_SELECT_AUTHOR)) {
@@ -292,7 +288,6 @@ public class Cercami extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -332,5 +327,5 @@ public class Cercami extends HttpServlet {
     public String getServletInfo() {
         return "An useful servlet";
 
-    }// </editor-fold>
+    }
 }
