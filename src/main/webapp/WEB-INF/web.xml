@@ -34,7 +34,7 @@
         <!-- specificare la timezone del server, nella connection string o nella configurazione dello stesso, è essenziale col connector/J 8 -->
         <!-- https://dev.mysql.com/doc/connectors/en/connector-j-time-instants.html -->
         <!-- specifying the server timezone, in the connection string o the server configuration is required with connector/J 8 -->
-        <param-value>jdbc:mysql://localhost/webdb2?connectionTimeZone=LOCAL&amp;forceConnectionTimeZoneToSession=false</param-value>
+        <param-value>jdbc:mysql://localhost/newspaper?connectionTimeZone=LOCAL&amp;forceConnectionTimeZoneToSession=false</param-value>
     </context-param>
     <context-param>
         <param-name>data.jdbc.username</param-name>
@@ -49,10 +49,10 @@
     <!-- USED FOR CONNECTION POOLING -->
     <context-param>
         <param-name>data.source</param-name>
-        <param-value>java:comp/env/jdbc/webdb2</param-value>
+        <param-value>java:comp/env/jdbc/newspaper</param-value>
     </context-param>
     <resource-ref>
-        <res-ref-name>jdbc/webdb2</res-ref-name>
+        <res-ref-name>jdbc/newspaper</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
         <res-sharing-scope>Shareable</res-sharing-scope>

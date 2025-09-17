@@ -10,7 +10,7 @@
  * inserire il jar del connector/J 8 nella vostra applicazione
  * 
  * ATTENZIONE: il codice fa uso di un database configurato come segue:
- * - database 'webdb2' su DBMS MySQL in esecuzione su localhost
+ * - database 'newspaper' su DBMS MySQL in esecuzione su localhost
  * - utente 'website' con password 'webpass' autorizzato nel DBMS 
  *   a leggere i dati del suddetto database
  * - tabella 'author' presente nel suddetto database, con almeno le 
@@ -26,7 +26,7 @@
  * and in this case you should add the connector/J 8 jar in your application libraries.
  * 
  * WARNING: the code makes use of a database configured as follows:
- * - 'webdb2' database on a MySQL DBMS running on localhost
+ * - 'newspaper' database on a MySQL DBMS running on localhost
  * - user 'website' with password 'webpass' authorized in the DBMS to read the 
  *   data of the aforementioned database
  * - 'author' table present in the aforementioned database, 
@@ -60,7 +60,7 @@ public class Cercami extends HttpServlet {
 
     ///iniettiamo un riferimento alla DataSource che gestisce il pool di connessioni (per la versione pooling_global)
     //inject a reference to the DataSource object (for the pooling_global version)
-    @Resource(name = "jdbc/webdb2")
+    @Resource(name = "jdbc/newspaper")
     private DataSource dsg;
 
     //e' sempre opportuno separare il testo SQL da codice
